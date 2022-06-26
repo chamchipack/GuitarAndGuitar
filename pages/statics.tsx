@@ -35,7 +35,8 @@ const Statics = () => {
             }
             let timeArray = [0, 0, 0, 0]
             for(let i = 0; i < data.alldata.length; i++){
-                const devidedData = parseInt(data.alldata[i].checktime.substring(0,2))
+                const needed = data.alldata[i].checktime?.substring(0,2)
+                const devidedData = parseInt(needed)
                 if(devidedData < 15){
                     timeArray[0] += 1;
                 } else if(devidedData < 18){
@@ -50,6 +51,7 @@ const Statics = () => {
             setArray(['12~15시', '15~18시', '18~20시', '20~23시'])
         })
         .catch((error) => {
+            alert('일시적인 오류입니다')
             console.log(error)
         })
     }
@@ -85,6 +87,7 @@ const Statics = () => {
             setArray(['어쿠스틱', '베이스', '일렉기타', 'others'])
         })
         .catch((error) => {
+            alert('일시적인 오류입니다')
             console.log(error)
         })
     }

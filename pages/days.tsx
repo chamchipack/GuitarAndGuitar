@@ -7,7 +7,13 @@ import { detail } from "../recoil/states"
 import { modalToggle } from "../recoil/states"
 import { useRecoilState } from "recoil"
 import {Userdata} from './listpage'
+import style from 'styled-jsx/css'
 
+const btnStyle = style`
+    button:hover{
+        background : orange;
+    }
+`
 interface Apis {
     daydata : [],
     daydata2 : [],
@@ -67,6 +73,7 @@ const Days = () : JSX.Element=> {
                     return(
                         <>
                             <button onClick={()=>{selectDay(day)}} className={Listcss.buttonDesign}>{day}</button>
+                                <style jsx>{btnStyle}</style>
                         </>
                     )
                 })
