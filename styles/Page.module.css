@@ -1,0 +1,132 @@
+.main{
+    width: 100%;
+    height: 100%;
+}
+.mains{
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.chartback{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 15%;
+    padding: 2%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+.mainpage{
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    margin-top:30px;
+    text-align: center;
+    padding-top:200px;
+}
+.backImage{
+    height: 93vh;
+    margin-top: -30px;
+    background-image : url('https://d3b39vpyptsv01.cloudfront.net/photo/1/2/841e520c8ce14f6e9e19a4e1f363cdd7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.backImage2{
+    height: 100vh;
+    margin-top: -30px;
+    background-image: url('https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F277CC94E525223821B');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.void{
+    margin-top: 50px;
+}
+
+.inputDesign{
+    width: 300px;
+    height:50px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+
+.inputDesignSm{
+    width: 130px;
+    height:50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+.buttonDesign{
+    font-size: 20px;
+    font-weight: 600;
+    width: 150px;
+    height: 45px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+.staticChart{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 150px;
+    height: 45px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+.buttonDesign2{
+    font-size: 20px;
+    font-weight: 600;
+    width: 40px;
+    height: 40px;
+    margin-top: 30px;
+    margin-right:10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(218, 234, 248);
+}
+.buttonSelected{
+    font-size: 20px;
+    font-weight: 600;
+    width: 40px;
+    height: 40px;
+    margin-top: 30px;
+    margin-right:10px;
+    border: none;
+    border-radius: 5px;
+    background-color: goldenrod;
+}
+.selectBox{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: rgba(149, 157, 165, 0.8) 0px 8px 24px;
+    margin-right: 20px;
+}
+.options{
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.9) 0px 8px 24px;
+}
