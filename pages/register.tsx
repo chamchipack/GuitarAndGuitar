@@ -3,11 +3,11 @@ import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import Border from '../styles/Page.module.css'
 
-const register = () : JSX.Element => {
+const Register = () : JSX.Element => {
     const router = useRouter()
     const [getToken, setToken] = useState<string>('');
     const sevenDays : string[] = ['일','월','화','수','목','금','토']
-    const positions : string[] = ['Acoustic', 'Eletric', 'Bass','Other']
+    const positions : string[] = ['Acoustic', 'Electric', 'Bass','Other']
     const timeTable : string[] = []
     const dateArray : string[] = []
     for(let i = 1; i <= 31; i++){
@@ -40,7 +40,7 @@ const register = () : JSX.Element => {
             const day1Check = day1.current.value
             const day2Check = day2.current.value
 
-            if (userCheck.length === 0 || genderCheck.length < 2 ||
+            if (userCheck.length === 0 || genderCheck.length >= 2 ||
                 mobileCheck.length > 11) {
                 alert('양식을 확인해 주세요')
                 return
@@ -95,7 +95,8 @@ const register = () : JSX.Element => {
             response.json()
         )
         .then((data) => {
-            router.push('/listpage')
+            alert('등록이 완료되었습니다')
+            // router.push('/listpage')
             })
         .catch((error) => {
             console.log(error)
@@ -125,7 +126,7 @@ const register = () : JSX.Element => {
                         {
                             sevenDays.map((day, idx) => {
                                 return (
-                                         <option className={Border.options}>{day}요일</option>
+                                         <option key={idx} className={Border.options}>{day}요일</option>
                                 )
                             })
                         }
@@ -134,7 +135,7 @@ const register = () : JSX.Element => {
                         {
                             sevenDays.map((day, idx) => {
                                 return (
-                                        <option className={Border.options}>{day}요일</option>
+                                        <option key={idx} className={Border.options}>{day}요일</option>
                                 )
                             })
                         }
@@ -143,7 +144,7 @@ const register = () : JSX.Element => {
                         {
                             timeTable.map((timet, idx) => {
                                 return (
-                                        <option className={Border.options}>{timet}:00</option>
+                                        <option key={idx} className={Border.options}>{timet}:00</option>
                                 )
                             })
                         }
@@ -151,18 +152,18 @@ const register = () : JSX.Element => {
                         <div className={Border.void}>
                             <select className={Border.selectBox} ref={position}>
                                 {
-                                    positions.map((data)=>{
+                                    positions.map((data, idx)=>{
                                         return(
-                                        <option>{data}</option>
+                                        <option key={idx}>{data}</option>
                                         )
                                     })
                                 }
                             </select>
                             <select className={Border.selectBox} ref={regDate}>
                                 {
-                                    dateArray.map((data)=>{
+                                    dateArray.map((data, idx)=>{
                                         return(
-                                        <option>{data}</option>
+                                        <option key={idx}>{data}</option>
                                         )
                                     })
                                 }
@@ -183,4 +184,4 @@ const register = () : JSX.Element => {
         </>
     )
 }
-export default register
+export default Register

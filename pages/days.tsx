@@ -15,7 +15,7 @@ interface Apis {
     result : boolean
 }
 
-const days = () : JSX.Element=> {
+const Days = () : JSX.Element=> {
     const router = useRouter();
     const [getDay, setDay] = useState<[]>();
     const sevenDays : string[] = ['일','월','화','수','목','금','토']
@@ -113,4 +113,4 @@ const days = () : JSX.Element=> {
 //         }
 //     }
 // }
-export default days
+export default Days

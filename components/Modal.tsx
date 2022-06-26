@@ -39,7 +39,6 @@ function Modal(){
             response.json()
         )
         .then((data : ApiDelete) => {
-            console.log(data)
             if(data.result === true){
                 alert('데이터가 삭제되었습니다')
                 router.reload();
@@ -56,7 +55,7 @@ function Modal(){
             <div className={Listcss.background}>
                 <div className={Modalcss.grid}>
                     <p className={Modalcss.word}>{getItem.username}</p>
-                    <p className={Modalcss.word2}>{getItem.phonenumber}</p>
+                    <p className={Modalcss.word2}>{getItem.age}세</p>
                     <button onClick={()=>{deleteUser(getItem.username)}} className={Modalcss.btnDelete}>삭제</button>
                 </div>
                 <div className={Modalcss.grid}>
@@ -82,12 +81,15 @@ function Modal(){
                     <p className={Modalcss.word}>{getItem.checktime}</p>
                 </div>
                 <div className={Modalcss.grid}>
-                    <p>메모</p>
+                    <p className={Modalcss.word}>{getItem.position}</p>
+                </div>
+                <div className={Modalcss.grid}>
+                    <p className={Modalcss.word2}>연락처 : {getItem.phonenumber}</p>
                 </div>
                 
                 <div className={Modalcss.grid}>
                     <button onClick={()=>{setModal(!getModal)}} className={Modalcss.btn}>닫기</button>
-                    <button onClick={()=>{}} className={Modalcss.btn2}>메모달기</button>
+                    {/* <button onClick={()=>{}} className={Modalcss.btn2}>메모달기</button> */}
                 </div>
                 
             </div>

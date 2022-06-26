@@ -32,10 +32,10 @@ export interface Apione extends Apis{
     result : boolean
 }
 
-const listpage = () => {
+const Listpage = () => {
     const router = useRouter()
     const nameFind = useRef<HTMLInputElement>(null);
-    const [getList, setList] = useState<[]>();
+    const [getList, setList] = useState<Userdata[]>();
     const [getDetail, setDetail] = useRecoilState(detail)
     const [getModal, setModal] = useRecoilState(modalToggle)
 
@@ -71,13 +71,12 @@ const listpage = () => {
             response.json()
         )
         .then((data : Apione) => {
+            const result = data.onedata
             if(data.onedata === null){
                 alert('이름을 확인해주세요')
                 return
             }
-            if(data.onedata !== undefined){
-                setList([data.onedata])
-            }
+                setList([result])
         })
         .catch((error) => {
             console.log('어디있니')
@@ -161,4 +160,4 @@ const listpage = () => {
 //   }
 // }
 
-export default listpage
+export default Listpage

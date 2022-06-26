@@ -12,7 +12,7 @@ interface Apis{
     result : boolean
 }
 
-const statics = () => {
+const Statics = () => {
     const [getList, setList] = useState<Number[]>([]);
     const [getArray, setArray] = useState<string[]>([])
 
@@ -125,15 +125,15 @@ const statics = () => {
     )
 }
 
-export const getServerSideProps = async() => {
-  const res = await fetch(`http://localhost:8080/api/loginCheck?userId=chamchi`)
-  const posts = await res.json();
-  console.log(posts)
-  return {
-    props : {
-      posts,
-    }
-  }
-}
+// export const getServerSideProps = async() => {
+//   const res = await fetch(`http://localhost:8080/api/loginCheck?userId=chamchi`)
+//   const posts = await res.json();
+//   console.log(posts)
+//   return {
+//     props : {
+//       posts,
+//     }
+//   }
+// }
 
-export default statics
+export default Statics

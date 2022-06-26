@@ -4,7 +4,8 @@ import HeadInfo from '../components/HeadInfo'
 import PageCss from '../styles/Page.module.css'
 
 interface Apis{
-  loginToken : string
+  loginToken : string,
+  result : boolean
 }
 
 
@@ -47,7 +48,11 @@ export default function Home ():JSX.Element{
         response.json() // then 안넘겨도 됩니다.
     )
       .then((data : Apis) => { // interface Apis === toUpperCase()
-        if(data.loginToken === null){ //early return 가독성, 미리 걷어내기
+        if(data.result === false){
+          alert('아이디와 비밀번호를 확인해주세요')
+          return
+        }
+        if(data.loginToken === null || data.loginToken === undefined){ //early return 가독성, 미리 걷어내기
           alert('토큰을 받아올 수 없습니다')
           return 
         }
@@ -85,7 +90,6 @@ export default function Home ():JSX.Element{
     </div>
   )
 }
-
 // SSR을 사용하는 1번방식
 // export const getServerSideProps = async() => {
 //   const res = await fetch(`http://localhost:8080/api/loginCheck?userId=chamchi`)
