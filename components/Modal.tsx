@@ -27,7 +27,7 @@ function Modal(){
             return 
         }
         const currentId = localStorage.getItem('token')
-        fetch(`http://localhost:8080/api/dataDelete?username=${username}`,{
+        fetch(`https://hwanginho.shop/api/dataDelete?username=${username}`,{
             method : 'DELETE',
             mode : 'cors',
             headers : {

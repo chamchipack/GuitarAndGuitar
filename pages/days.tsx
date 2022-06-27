@@ -35,7 +35,7 @@ const Days = () : JSX.Element=> {
     const selectDay = (day : string) => {
         const whatDay = day+'요일'
         const currentId = localStorage.getItem('token')
-        fetch(`http://localhost:8080/api/daydataserch?day1=${whatDay}&day2=${whatDay}`,{
+        fetch(`https://hwanginho.shop/api/daydataserch?day1=${whatDay}&day2=${whatDay}`,{
             method : 'GET',
             mode : 'cors',
             headers : {

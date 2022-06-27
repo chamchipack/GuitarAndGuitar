@@ -18,7 +18,7 @@ const Statics = () => {
 
     const timeChart = () => {
         const currentId = localStorage.getItem('token')
-        fetch(`http://localhost:8080/api/alldataserch?userId=chamchi`,{
+        fetch(`https://hwanginho.shop/api/alldataserch?userId=chamchi`,{
             method : 'GET',
             mode : 'cors',
             headers : {
@@ -58,7 +58,7 @@ const Statics = () => {
 
     const positionChart = ():void => {
         const currentId = localStorage.getItem('token')
-        fetch(`http://localhost:8080/api/alldataserch?userId=chamchi`,{
+        fetch(`https://hwanginho.shop/api/alldataserch?userId=chamchi`,{
             method : 'GET',
             mode : 'cors',
             headers : {

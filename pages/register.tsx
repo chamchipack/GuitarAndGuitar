@@ -72,7 +72,7 @@ const Register = () : JSX.Element => {
             return
         }
         const currentId = localStorage.getItem('token')
-        fetch(`http://localhost:8080/api/userData?userId=chamchi`,{
+        fetch(`https://hwanginho.shop/api/userData?userId=chamchi`,{
             method : 'POST',
             mode : 'cors',
             headers : {

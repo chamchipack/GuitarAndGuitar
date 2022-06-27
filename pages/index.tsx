@@ -34,7 +34,7 @@ export default function Home ():JSX.Element{
       alert('아이디, 비밀번호를 입력해주세요')
       return
     }
-    const answer = fetch("http://localhost:8080/api/login", {
+    const answer = fetch("https://hwanginho.shop/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
