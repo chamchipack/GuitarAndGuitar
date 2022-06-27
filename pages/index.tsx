@@ -48,6 +48,7 @@ export default function Home ():JSX.Element{
         response.json() // then 안넘겨도 됩니다.
     )
       .then((data : Apis) => { // interface Apis === toUpperCase()
+        console.log(data)
         if(data.result === false){
           alert('아이디와 비밀번호를 확인해주세요')
           return
@@ -66,7 +67,6 @@ export default function Home ():JSX.Element{
 }
   return (
     <div className={PageCss.backImage}>
-      <HeadInfo title='start'/>
       {
         getToken
         ? <div className={PageCss.mainpage}>

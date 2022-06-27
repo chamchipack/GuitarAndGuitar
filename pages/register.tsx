@@ -16,12 +16,15 @@ const Register = () : JSX.Element => {
             timeTable.push(i.toString())
         }
     }
-
     useEffect(()=>{
         const currentId = localStorage.getItem('token')
-        currentId === null ? null : setToken(currentId)
+        if(currentId === null){
+            alert('로그인 후 이용해주세요')
+            router.push('/')
+            return
+        }
+        setToken(currentId)
     },[])
-    
     const day1 = useRef<HTMLSelectElement>(null);
     const day2 = useRef<HTMLSelectElement>(null);
     const name = useRef<HTMLInputElement>(null);
@@ -47,7 +50,7 @@ const Register = () : JSX.Element => {
             }
             if (day1Check === day2Check) {
                 alert('현재 등록수강생은 주1회로 등록됩니다.')
-                return null
+                return
             }
         }
     }
@@ -59,6 +62,7 @@ const Register = () : JSX.Element => {
             if(checkVoid() === null){
             checked = null
             }
+            
         if(day1.current === null || name.current === null || time.current === null){
             alert('useRef가 지정되지 않았습니다')
             return
@@ -109,8 +113,11 @@ const Register = () : JSX.Element => {
         <div style={{padding:'20px',background:'linear-gradient(black,white)', height:'93vh'}} className={Border.mains}>
             <h1 style={{color:'white'}}>수강생 등록하기</h1>
         {
-            getToken !== null
+            getToken === null
             ? <div className={Border.mains}>
+                <h1>관리자 로그인이 필요합니다</h1>
+                </div>
+            : <div className={Border.mains}>
                         <div className={Border.void}>
                             <input className={Border.inputDesign} placeholder='이름' ref={name} />
                         </div>
@@ -175,9 +182,7 @@ const Register = () : JSX.Element => {
                         </div>
                         
                     </div>
-            : <div className={Border.mains}>
-                <h1>관리자 로그인이 필요합니다</h1>
-              </div>
+            
         }
         </div>
         

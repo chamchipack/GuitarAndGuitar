@@ -116,7 +116,6 @@ const Statics = () => {
       };
     return (
         <div style={{padding:'20px',background:'linear-gradient(black,white)'}}>
-            <HeadInfo title='my photos' />
             <div className={Pagecss.mains}>
                 <button className={Pagecss.staticChart} onClick={()=>{timeChart()}}>시간대 차트</button>
                 <button className={Pagecss.staticChart} onClick={()=>{positionChart()}}>포지션 차트</button>

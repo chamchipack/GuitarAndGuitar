@@ -66,7 +66,6 @@ const Days = () : JSX.Element=> {
     
     return (
         <div style={{padding:'20px',background:'linear-gradient(black,white)', height:'93vh'}}>
-            <HeadInfo title='my photos' />
             <div>
             {
                 sevenDays.map((day) => {

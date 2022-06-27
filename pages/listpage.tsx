@@ -109,7 +109,6 @@ const Listpage = () => {
     },[])
     return (
         <div style={{padding:'30px', background:'linear-gradient(black,white)', height:'93vh'}}>
-            <HeadInfo title='my photos' />
             <input ref={nameFind} className={Listcss.inputDesign} placeholder='이름 입력'/>
             <button onClick={searchName} className={Listcss.buttonDesign}>찾기</button>
             <div className={Listcss.divBox}>

@@ -9,6 +9,6 @@ const HeadInfo = ({title}) => {
 }
 
 HeadInfo.defaultProps = {
-    title : 'My jobs'
+    title : 'Guitar&Guitar'
 }
 export default HeadInfo
