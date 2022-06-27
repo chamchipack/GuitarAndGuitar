@@ -1,4 +1,3 @@
-import HeadInfo from "../components/HeadInfo"
 import Modal from '../components/Modal'
 import { useEffect, useState } from "react"
 import Listcss from '../styles/List.module.css'
@@ -65,7 +64,7 @@ const Days = () : JSX.Element=> {
     }
     
     return (
-        <div style={{padding:'20px',background:'linear-gradient(black,white)', height:'93vh'}}>
+        <div className={Listcss.mainbox} style={{padding:'20px',background:'linear-gradient(black,white)', height:'93vh'}}>
             <div>
             {
                 sevenDays.map((day) => {

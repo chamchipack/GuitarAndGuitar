@@ -4,6 +4,19 @@
     background: black;
     padding-left: 40px;
 }
+@media (max-width: 500px) {
+    .nav{
+        padding: 0.5rem 1rem;
+        display: flex;
+        background: black;
+        padding-left: 40px;
+        width: 460px;
+    }
+    .nav li {
+        margin-right: 1px;
+    }
+    
+  }
 .nav ul {
     display: flex;
 }

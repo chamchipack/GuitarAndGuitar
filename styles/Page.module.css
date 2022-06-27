@@ -27,6 +27,18 @@
     text-align: center;
     padding-top:200px;
 }
+@media (max-width: 500px) {
+    .backImage{
+        width: 460px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .chartback{
+        width: 400px;
+        border-radius: 10px;
+    }
+    
+  }
 .backImage{
     height: 93vh;
     margin-top: -30px;

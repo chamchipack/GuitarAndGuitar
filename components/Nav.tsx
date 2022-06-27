@@ -5,17 +5,17 @@ const Nav = ():JSX.Element => {
     return (
         <nav className={navStyles.nav}>
                 <Link href='/'>
-                    <h2>CHECK It</h2>
+                    <h2>CHECK IT</h2>
                 </Link>
             <ul>
                 <li>
                     <Link href='/listpage'>
-                        <a>명단 보기</a>
+                        <a>전체명단</a>
                     </Link>
                 </li>
                 <li>
                     <Link href='/days'>
-                        <a>요일별 보기</a>
+                        <a>요일별</a>
                     </Link>
                 </li>
                 <li>

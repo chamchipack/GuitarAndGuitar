@@ -1,5 +1,6 @@
 import HeadInfo from "../components/HeadInfo"
 import Pagecss from '../styles/Page.module.css'
+import Listcss from '../styles/List.module.css'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import { useEffect, useState } from "react";
@@ -115,7 +116,7 @@ const Statics = () => {
         ],
       };
     return (
-        <div style={{padding:'20px',background:'linear-gradient(black,white)'}}>
+        <div className={Listcss.mainbox} style={{padding:'20px',background:'linear-gradient(black,white)'}}>
             <div className={Pagecss.mains}>
                 <button className={Pagecss.staticChart} onClick={()=>{timeChart()}}>시간대 차트</button>
                 <button className={Pagecss.staticChart} onClick={()=>{positionChart()}}>포지션 차트</button>

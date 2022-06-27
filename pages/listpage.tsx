@@ -108,7 +108,7 @@ const Listpage = () => {
         })
     },[])
     return (
-        <div style={{padding:'30px', background:'linear-gradient(black,white)', height:'93vh'}}>
+        <div className={Listcss.mainbox} style={{boxSizing:'border-box',padding:'30px', background:'linear-gradient(black,white)', height:'93vh'}}>
             <input ref={nameFind} className={Listcss.inputDesign} placeholder='이름 입력'/>
             <button onClick={searchName} className={Listcss.buttonDesign}>찾기</button>
             <div className={Listcss.divBox}>

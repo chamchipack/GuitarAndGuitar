@@ -42,7 +42,6 @@ function Modal(){
             if(data.result === true){
                 alert('데이터가 삭제되었습니다')
                 router.reload();
-                return
             }
     })
         .catch((error) => {
