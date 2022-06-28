@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Border from '../styles/Page.module.css'
 
 const Register = () : JSX.Element => {
+    const ApiUrl = process.env.NEXT_PUBLIC_BASE_URL
     const router = useRouter()
     const [getToken, setToken] = useState<string>('');
     const sevenDays : string[] = ['일','월','화','수','목','금','토']
@@ -17,7 +18,7 @@ const Register = () : JSX.Element => {
         }
     }
     useEffect(()=>{
-        const currentId = localStorage.getItem('token')
+        const currentId = document.cookie.substring(9);
         if(currentId === null){
             alert('로그인 후 이용해주세요')
             router.push('/')
@@ -75,8 +76,8 @@ const Register = () : JSX.Element => {
             alert('useRef가 지정되지 않았습니다')
             return
         }
-        const currentId = localStorage.getItem('token')
-        fetch(`https://hwanginho.shop/api/userData?userId=chamchi`,{
+        const currentId = document.cookie.substring(9);
+        fetch(`${ApiUrl}/api/userData?userId=chamchi`,{
             method : 'POST',
             mode : 'cors',
             headers : {
@@ -113,7 +114,7 @@ const Register = () : JSX.Element => {
         <div style={{padding:'20px',background:'linear-gradient(black,white)', height:'93vh'}} className={Border.mains}>
             <h1 style={{color:'white'}}>수강생 등록하기</h1>
         {
-            getToken === null
+            !getToken
             ? <div className={Border.mains}>
                 <h1>관리자 로그인이 필요합니다</h1>
                 </div>

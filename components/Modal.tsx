@@ -26,7 +26,7 @@ function Modal(){
         if(check === false){
             return 
         }
-        const currentId = localStorage.getItem('token')
+        const currentId = document.cookie.substring(9);
         fetch(`https://hwanginho.shop/api/dataDelete?username=${username}`,{
             method : 'DELETE',
             mode : 'cors',

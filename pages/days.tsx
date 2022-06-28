@@ -21,6 +21,7 @@ interface Apis {
 }
 
 const Days = () : JSX.Element=> {
+    const ApiUrl = process.env.NEXT_PUBLIC_BASE_URL
     const router = useRouter();
     const [getDay, setDay] = useState<[]>();
     const sevenDays : string[] = ['일','월','화','수','목','금','토']
@@ -33,8 +34,8 @@ const Days = () : JSX.Element=> {
 
     const selectDay = (day : string) => {
         const whatDay = day+'요일'
-        const currentId = localStorage.getItem('token')
-        fetch(`https://hwanginho.shop/api/daydataserch?day1=${whatDay}&day2=${whatDay}`,{
+        const currentId = document.cookie.substring(9);
+        fetch(`${ApiUrl}/api/daydataserch?day1=${whatDay}&day2=${whatDay}`,{
             method : 'GET',
             mode : 'cors',
             headers : {

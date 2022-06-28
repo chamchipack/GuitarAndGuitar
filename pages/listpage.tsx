@@ -6,7 +6,6 @@ import { modalToggle } from "../recoil/states"
 import HeadInfo from "../components/HeadInfo"
 import Listcss from '../styles/List.module.css'
 import Modal from '../components/Modal'
-
 export type Userdata = {
     age: string,
     checktime: string,
@@ -33,6 +32,7 @@ export interface Apione extends Apis{
 }
 
 const Listpage = () => {
+    const ApiUrl = process.env.NEXT_PUBLIC_BASE_URL
     const router = useRouter()
     const nameFind = useRef<HTMLInputElement>(null);
     const [getList, setList] = useState<Userdata[]>();
@@ -44,7 +44,7 @@ const Listpage = () => {
             setModal(!getModal)
     }
     const searchName = () => {
-        const currentId = localStorage.getItem('token')
+        const currentId = document.cookie.substring(9);
         if(!currentId){
             alert('관리자 로그인 후 이용해주세요')
             router.push('/')
@@ -59,7 +59,7 @@ const Listpage = () => {
             alert('이름을 입력해주세요!')
             return
         }
-        fetch(`http://localhost:8080/api/namedataserch?username=${whosname}`,{
+        fetch(`${ApiUrl}/api/namedataserch?username=${whosname}`,{
             method : 'GET',
             mode : 'cors',
             headers : {
@@ -84,8 +84,8 @@ const Listpage = () => {
     }
     
     useEffect(()=>{
-        const currentId = localStorage.getItem('token')
-        fetch(`https://hwanginho.shop/api/alldataserch?userId=chamchi`,{
+        const currentId = document.cookie.substring(9);
+        fetch(`${ApiUrl}/api/alldataserch?userId=chamchi`,{
             method : 'GET',
             mode : 'cors',
             headers : {
@@ -149,12 +149,10 @@ const Listpage = () => {
 }
 
 // export const getServerSideProps = async() => {
-//   const res = await fetch(`http://localhost:8080/api/loginCheck?userId=chamchi`)
-//   const posts = await res.json();
-//   console.log(posts)
+//   console.log(res)
 //   return {
 //     props : {
-//       posts,
+//         res,
 //     }
 //   }
 // }

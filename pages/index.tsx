@@ -10,18 +10,24 @@ interface Apis{
 
 
 export default function Home ():JSX.Element{
+  const ApiUrl = process.env.NEXT_PUBLIC_BASE_URL
   const router = useRouter()
   const [getToken, setToken] = useState<string>('');
 
   useEffect(()=>{
-    const currentId = localStorage.getItem('token')
-    if(currentId !== null){
-      setToken(currentId)
+    const tokens = document.cookie.substring(9);
+    if(tokens !== null){
+      setToken(tokens)
     }
   },[])
 
   const adminId = useRef<HTMLInputElement>(null);
   const adminPw = useRef<HTMLInputElement>(null);
+
+  const logOut = () => {
+    localStorage.removeItem('token')
+    document.cookie = `username=; expires= Thu, 18 DEC 2013 00:00:00 UTC`
+  }
 
   const login = async () => {
     if(adminId.current === null || adminPw.current === null){
@@ -34,7 +40,7 @@ export default function Home ():JSX.Element{
       alert('아이디, 비밀번호를 입력해주세요')
       return
     }
-    const answer = fetch("https://hwanginho.shop/api/login", {
+    const answer = fetch(`${ApiUrl}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +54,6 @@ export default function Home ():JSX.Element{
         response.json() // then 안넘겨도 됩니다.
     )
       .then((data : Apis) => { // interface Apis === toUpperCase()
-        console.log(data)
         if(data.result === false){
           alert('아이디와 비밀번호를 확인해주세요')
           return
@@ -57,7 +62,9 @@ export default function Home ():JSX.Element{
           alert('토큰을 받아올 수 없습니다')
           return 
         }
-        localStorage.setItem('token', data.loginToken)
+        const date = new Date()
+        date.setMinutes(date.getMinutes()+30)
+        document.cookie = `username=${data.loginToken}; expires=${date}`
         router.reload()
       })
       .catch(err => {
@@ -71,7 +78,7 @@ export default function Home ():JSX.Element{
         getToken
         ? <div className={PageCss.mainpage}>
           <h1 style={{color:'#eee'}}>안녕하세요 관리자님</h1>
-          <button className={PageCss.buttonDesign} onClick={()=>{localStorage.removeItem('token'); router.reload()}}>로그아웃</button>
+          <button className={PageCss.buttonDesign} onClick={()=>{logOut(); router.reload()}}>로그아웃</button>
           </div>
         : <div className={PageCss.mainpage}>
             <div>

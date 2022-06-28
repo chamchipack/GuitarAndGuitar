@@ -14,12 +14,13 @@ interface Apis{
 }
 
 const Statics = () => {
+    const ApiUrl = process.env.NEXT_PUBLIC_BASE_URL
     const [getList, setList] = useState<Number[]>([]);
     const [getArray, setArray] = useState<string[]>([])
 
     const timeChart = () => {
-        const currentId = localStorage.getItem('token')
-        fetch(`https://hwanginho.shop/api/alldataserch?userId=chamchi`,{
+        const currentId = document.cookie.substring(9);
+        fetch(`${ApiUrl}/api/alldataserch?userId=chamchi`,{
             method : 'GET',
             mode : 'cors',
             headers : {
@@ -58,8 +59,8 @@ const Statics = () => {
     }
 
     const positionChart = ():void => {
-        const currentId = localStorage.getItem('token')
-        fetch(`https://hwanginho.shop/api/alldataserch?userId=chamchi`,{
+        const currentId = document.cookie.substring(9);
+        fetch(`${ApiUrl}/api/alldataserch?userId=chamchi`,{
             method : 'GET',
             mode : 'cors',
             headers : {
