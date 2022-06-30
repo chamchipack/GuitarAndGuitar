@@ -4,7 +4,20 @@
     background: black;
     padding-left: 40px;
 }
-@media (max-width: 500px) {
+@media (max-width: 400px) {
+    .nav{
+        padding: 0.5rem 1rem;
+        display: flex;
+        background: black;
+        padding-left: 40px;
+        width: 460px;
+    }
+    .nav li {
+        margin-right: 1px;
+    }
+    
+  }
+@media (max-width: 450px) {
     .nav{
         padding: 0.5rem 1rem;
         display: flex;

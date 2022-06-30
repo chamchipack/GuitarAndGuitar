@@ -38,7 +38,6 @@ const Listpage = () => {
     const [getList, setList] = useState<Userdata[]>();
     const [getDetail, setDetail] = useRecoilState(detail)
     const [getModal, setModal] = useRecoilState(modalToggle)
-
     const modalOn = (data : Userdata) : void => {
             setDetail(data)
             setModal(!getModal)

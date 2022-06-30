@@ -27,7 +27,7 @@
     text-align: center;
     padding-top:200px;
 }
-@media (max-width: 500px) {
+@media (max-width: 460px) {
     .backImage{
         width: 460px;
         background-repeat: no-repeat;
@@ -36,6 +36,9 @@
     .chartback{
         width: 400px;
         border-radius: 10px;
+    }
+    .mains{
+        width: 440px;
     }
     
   }

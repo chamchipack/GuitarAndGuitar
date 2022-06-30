@@ -71,7 +71,7 @@ const Days = () : JSX.Element=> {
                 sevenDays.map((day) => {
                     return(
                         <>
-                            <button onClick={()=>{selectDay(day)}} className={Listcss.buttonDesign}>{day}</button>
+                            <button onClick={()=>{selectDay(day)}} className={Listcss.buttonDesign3}>{day}</button>
                                 <style jsx>{btnStyle}</style>
                         </>
                     )
